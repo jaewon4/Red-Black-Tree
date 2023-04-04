@@ -28,5 +28,9 @@ node_t *rbtree_max(const rbtree *);
 int rbtree_erase(rbtree *, node_t *);
 
 int rbtree_to_array(const rbtree *, key_t *, const size_t);
+// 추가함수
+void rotate_right(rbtree *t, node_t *x);
+void rotate_left(rbtree *t, node_t *x);
+void insertion_fixup(rbtree *t, node_t *z);
 
 #endif  // _RBTREE_H_
