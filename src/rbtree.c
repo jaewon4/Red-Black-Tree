@@ -2,6 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 추가함수
+void rotate_right(rbtree *t, node_t *x);
+void rotate_left(rbtree *t, node_t *x);
+void insertion_fixup(rbtree *t, node_t *z);
+void postorder_delete_all_node(rbtree* t, node_t* targetNode);
+void rbtree_inorder(const rbtree *t, node_t *root, int *cnt, key_t *arr, int n);
+void rbtree_transplant(rbtree *t, node_t *u, node_t *v);
+node_t *rbtree_successor(const rbtree *t, node_t *root);
+void rbtree_erase_fixup(rbtree* t, node_t* x);
+
 rbtree *new_rbtree(void) {
     rbtree *p = (rbtree*)calloc(1, sizeof(rbtree));
     node_t *newNode = (node_t*)calloc(1, sizeof(node_t));
