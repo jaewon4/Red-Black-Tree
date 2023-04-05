@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     // t = rbtree_insert(tree, 5);
      t = rbtree_insert(tree, 65);
     inorderTraversalPrint(t);
-    printf("max : %d, min : %d\n", rbtree_max(tree)->key, rbtree_min(tree)->key);
+    delete_rbtree(tree);
     return 0;
 }
 

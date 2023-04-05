@@ -32,5 +32,9 @@ int rbtree_to_array(const rbtree *, key_t *, const size_t);
 void rotate_right(rbtree *t, node_t *x);
 void rotate_left(rbtree *t, node_t *x);
 void insertion_fixup(rbtree *t, node_t *z);
-
+void postorder_delete_all_node(rbtree* t, node_t* targetNode);
+void rbtree_inorder(const rbtree *t, node_t *root, int *cnt, key_t *arr, int n);
+void rbtree_transplant(rbtree *t, node_t *u, node_t *v);
+node_t *rbtree_successor(const rbtree *t, node_t *root);
+void rbtree_erase_fixup(rbtree* t, node_t* x);
 #endif  // _RBTREE_H_
