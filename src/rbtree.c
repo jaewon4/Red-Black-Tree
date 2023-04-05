@@ -397,11 +397,24 @@ int rbtree_erase(rbtree *t, node_t *p) {
 }
 
 int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
-  
-  return 0;
+    // RB Tree의 내용을 key 순서대로 주어진 array 반환; array의 크기는 n으로 주어지며 
+    // tree의 크기가 n보다 큰 경우에는 순서대로 n개 까지만 반환
+    int counter = 0;
+    int *ptr_counter = &counter;
+    rbtree_inorder(t, t->root, ptr_counter, arr, n);
+    return 0;
 }
 
 void rbtree_inorder(const rbtree *t, node_t *root, int *cnt, key_t *arr, int n){
-
-  return;
+    // 이진탐색 트리에서 중위순회를 하면 오름차순으로 나오는 원리를 이용하여 중위순회를 한다.
+    if (root->left != t->nil)
+        rbtree_inorder(t, root->left, cnt, arr, n);
+    if (*cnt < n){
+        arr[*cnt] = root->key;
+        (*cnt)++;
+    }
+    else
+        return;
+    if (root->right != t->nil)
+        rbtree_inorder(t, root->right, cnt, arr, n);
 }
